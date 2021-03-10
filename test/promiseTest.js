@@ -24,7 +24,7 @@ describe('Promises', function() {
 
 	it('property comparison', function() {
 		var name = 'Kindergarten Cop';
-		var movie = { name: name, year: 1990 };
+		var movie = { name: myName, year: 1990 };
 
 		var p = Promise.resolve(movie);
 
