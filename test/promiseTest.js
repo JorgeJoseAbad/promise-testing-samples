@@ -14,21 +14,37 @@ describe('Promises', function() {
 		});
 	});
 
+	it('-->promise resolve is a object', function() {
+		var user = { first: 'John', last: 'Matrix' };
+		var p = Promise.resolve(user);
+		return expect(p).to.be.a('object');
+	});
+
 	it('object comparison', function() {
 		var user = { first: 'John', last: 'Matrix' };
-
 		var p = Promise.resolve(user);
-
 		return expect(p).to.become(user);
 	});
 
+	it('-->Promise resolved return the object', function() {
+		var myObject = { foo: "bar" };
+		var p = Promise.resolve(myObject);
+		return expect(p.then(function(obj){return obj})).to.become(myObject);
+	});
+
+	it('-->Promise return object which have property', function() {
+		var myObject = { foo: "bar" };
+		var p = Promise.resolve(myObject);
+		return expect(p).to.eventually.have.property('foo');
+	});
+
 	it('property comparison', function() {
-		var name = 'Kindergarten Cop';
+		var myName = 'Kindergarten Cop';
 		var movie = { name: myName, year: 1990 };
 
 		var p = Promise.resolve(movie);
 
-		return expect(p.then(function(o) { return o.name; })).to.become(name);
+		return expect(p.then(function(o) { return o.name; })).to.become(myName);
 	});
 
 	it('multiple promise assertions', function() {
@@ -50,6 +66,16 @@ describe('Promises', function() {
 
 		return Promise.all([p1, p2]).then(function(values) {
 			expect(values[0]).to.not.equal(values[1]);
+		});
+	});
+
+	it('comparing multiple promises correct identity', function() {
+		var p1 = Promise.resolve('Get up');
+		var p2 = Promise.resolve('Get down');
+
+		return Promise.all([p1, p2]).then(function(values) {
+			expect(values[0]).to.equal(values[0]);
+			expect(values[1]).to.equal(values[1]);
 		});
 	});
 
