@@ -33,9 +33,10 @@ describe('Promises', function() {
 	});
 
 	it('-->Promise return object which have property', function() {
-		var myObject = { foo: "bar" };
+		var myObject = { foo: "bar", noo : "test" };
 		var p = Promise.resolve(myObject);
 		return expect(p).to.eventually.have.property('foo');
+		return expect(p).to.eventually.have.property('noo');
 	});
 
 	it('property comparison', function() {
@@ -69,7 +70,7 @@ describe('Promises', function() {
 		});
 	});
 
-	it('comparing multiple promises correct identity', function() {
+	it('--> comparing multiple promises correct identity', function() {
 		var p1 = Promise.resolve('Get up');
 		var p2 = Promise.resolve('Get down');
 
