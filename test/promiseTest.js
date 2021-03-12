@@ -126,7 +126,13 @@ it('--> should fail the test', function() {
 
 			var a = arnold(stub);
 			var quote = a.talkToTheHand();
+
+			//return expect(quote).to.be.rejected.then(response => {
+	    //  expect(response.toString()).to.equal(message);
+			//})
+
 			return expect(quote.catch((o)=> o.toString())).to.become(message);
+
 		});
 	});
 
