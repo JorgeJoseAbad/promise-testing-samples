@@ -14,6 +14,16 @@ describe('Promises', function() {
 		});
 	});
 
+it('--> should fail the test', function() {
+	  var p = Promise.reject('this promise will always be rejected');
+	  return expect(p).to.be.rejectedWith('this promise will always be rejected')
+	});
+
+	it('--> should pass the test', function() {
+		var p = Promise.resolve('this promise will allways pass');
+		return expect(p).to.become('this promise will allways pass')
+	});
+
 	it('--> promise resolve is a object', function() {
 		var user = { first: 'John', last: 'Matrix' };
 		var p = Promise.resolve(user);
