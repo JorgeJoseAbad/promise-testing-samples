@@ -131,8 +131,6 @@ it('--> should fail the test', function() {
 		});
 	});
 
-
-
 });
 
 describe('--> From myPromise constructor',function() {
@@ -140,9 +138,8 @@ describe('--> From myPromise constructor',function() {
 	it('--> return a resolved promise', function() {
 		var data = "resolve";
 		var result = myPromise(data);
-		return expect(result).to.become(data);
+		return expect(result).to.eventually.equal(data);
 	});
-
 
 	it('--> return a resolved theenable promise', function() {
 		var data = "resolve";

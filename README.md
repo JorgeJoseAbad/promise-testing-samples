@@ -2,6 +2,10 @@
 
 [sitepoint-editors/promise-testing-samples](sitepoint-editors/promise-testing-samples)
 
+## Aditional info from
+
+[https://www.sitepoint.com/promises-in-javascript-unit-tests-the-definitive-guide/](https://www.sitepoint.com/promises-in-javascript-unit-tests-the-definitive-guide/)
+
 # Promise testing samples
 
 This is a demo project showing how you can integrate several libraries with Mocha to make testing promises easy.
