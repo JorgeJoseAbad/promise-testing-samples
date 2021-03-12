@@ -14,7 +14,7 @@ describe('Promises', function() {
 		});
 	});
 
-	it('-->promise resolve is a object', function() {
+	it('--> promise resolve is a object', function() {
 		var user = { first: 'John', last: 'Matrix' };
 		var p = Promise.resolve(user);
 		return expect(p).to.be.a('object');
@@ -26,17 +26,17 @@ describe('Promises', function() {
 		return expect(p).to.become(user);
 	});
 
-	it('-->Promise resolved return the object', function() {
+	it('--> Promise resolved return the object', function() {
 		var myObject = { foo: "bar" };
 		var p = Promise.resolve(myObject);
 		return expect(p.then(function(obj){return obj})).to.become(myObject);
 	});
 
-	it('-->Promise return object which have property', function() {
+	it('--> Promise return object which have property', function() {
 		var myObject = { foo: "bar", noo : "test" };
 		var p = Promise.resolve(myObject);
+
 		return expect(p).to.eventually.have.property('foo');
-		return expect(p).to.eventually.have.property('noo');
 	});
 
 	it('property comparison', function() {
