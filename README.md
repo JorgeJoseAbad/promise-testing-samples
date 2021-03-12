@@ -6,11 +6,11 @@
 
 This is a demo project showing how you can integrate several libraries with Mocha to make testing promises easy.
 
-chai
-chai-as-promised
-es6-promise
-sinon
-sinon-as-promised
+- chai
+- chai-as-promised
+- es6-promise
+- sinon
+- sinon-as-promised
 
 To get started, run `npm install` to install the necessary packages. You can run the test suite using `npm test`.
 
