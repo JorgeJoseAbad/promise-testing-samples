@@ -127,7 +127,8 @@ it('--> should fail the test', function() {
 			var a = arnold(stub);
 			var quote = a.talkToTheHand();
 
-			return expect(quote.catch((o)=> o.toString())).eventually.deep.equal(message);
+			return expect(quote.catch(
+				(o)=> o.eventually.deep.equal(message)));
 
 			//return expect(quote).to.be.rejected.then(response => {
 	    //  expect(response.toString()).to.equal(message);
