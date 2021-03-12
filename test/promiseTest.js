@@ -5,6 +5,7 @@ var sinon = require('sinon');
 var Promise = require('es6-promise').Promise;
 
 var arnold = require('../src/arnold');
+var myPromise = require('../src/myPromise');
 
 describe('Promises', function() {
 	before(function() {
@@ -129,4 +130,41 @@ it('--> should fail the test', function() {
 			return expect(quote).to.be.rejectedWith(message);
 		});
 	});
+
+
+
+});
+
+describe('--> From myPromise constructor',function() {
+
+	it('--> return a resolved promise', function() {
+		var data = "resolve";
+		var result = myPromise(data);
+		return expect(result).to.become(data);
+	});
+
+
+	it('--> return a resolved theenable promise', function() {
+		var data = "resolve";
+		var result = myPromise(data);
+		return result.then(function(message) {
+			expect(result).to.become(message);
+		});
+	});
+
+	it('--> return a rejected promise', function() {
+		var data = "error";
+		var result = myPromise(data);
+		return expect(result).to.be.rejectedWith(data);
+	});
+
+	it('--> return a rejected catchable promise', function() {
+		var data = "error";
+		var result = myPromise(data);
+		return result.catch(function(message) {
+			expect(result).to.be.rejectedWith(message);
+		});
+
+	});
+
 });
