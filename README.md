@@ -1,6 +1,6 @@
 # Forked from
 
-[sitepoint-editors/promise-testing-samples](sitepoint-editors/promise-testing-samples)
+[https://github.com/sitepoint-editors/promise-testing-samples](https://github.com/sitepoint-editors/promise-testing-samples)
 
 ## Aditional info from
 
